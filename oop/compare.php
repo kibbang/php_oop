@@ -21,4 +21,24 @@ var_dump($file->isFile());
 var_dump($file->isDir());
 var_dump($file->fread($file->getSize()));
 $file->fwrite(rand(1, 1000));
+
+/**
+ * 특징
+ * 인자를 계속 전달 할 필요가 없다. 객체 내의 함수들은 공유를 한다.
+ * 잘 정돈되어있다
+ */
+
+// 하나를 더 만들어도 됨
+$file2 = new SplFileObject('data2.txt'); // $file2에 객체를 생성해 담음
+var_dump($file2->isFile());
+var_dump($file2->isDir());
+var_dump($file2->fread($file2->getSize()));
+$file2->fwrite(rand(1, 1000));
+
+// SplFileObject : Class (설계도)
+// Class앞에 new를 붙이면 저 클래스를 기반으로 객체를 만들어서 리턴
+// $file, $file2 : Instance (설계도를 바탕으로 만들어진 구체적인 제품)
+// isFile, isDir, fread: Method(function)
+// data.txt, data2.txt: state(상태)
+// 인스턴스들은 서로 다른 상태를 가지고 있기 때문에 같은 클래스라도 동작이 다르게 된다
 ?>
