@@ -39,3 +39,16 @@ Namespace(= package)
 
 namespace가 다르면 클래스 이름이 같아도 사용 가능하다.
 
+
+Composer
+php package manager
+php파일에 대한 관리자 역할
+
+composer init으로 composer가 관리하게끔 초기화
+
+https://packagist.org/에서 여러 package들이 있다.
+
+composer.lock이 생김
+autoload.php를 한번만 인클루드시켜주면 나머지 복잡한건 composer가 알아서 해준다.
+
+컴포저를 이용해 소스코드를 관리하면 소스 추적이 일관적이고 통합적이다.
