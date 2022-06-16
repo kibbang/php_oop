@@ -1,8 +1,13 @@
 <?php
 class myFileObject {
+    // 객체를 만드는 부분
+    public $filename;
     function __construct($fname) // 생성자: 인스턴스를 생성할때 생성자를 먼저 호출
     {
         $this->filename = $fname;
+        if(!file_exists($this->filename)) {
+            die('There is no file '.$this->filename);
+        }
     }
 
     function isFile(): bool
@@ -10,7 +15,8 @@ class myFileObject {
         return is_file($this->filename);
     }
 }
-$file = new myFileObject('data.txt');
+// 객체를 사용하는 부분
+$file = new myFileObject('data3.txt');
 
 var_dump($file->isFile());
 var_dump($file->filename);
