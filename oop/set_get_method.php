@@ -1,6 +1,7 @@
 <?php
 class Person {
-    private $name;
+    /** @property string $name */
+    private string $name;
     public function sayHi() {
         print("Hi I am ".$this->name.'.');
     }
